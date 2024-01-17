@@ -31,6 +31,15 @@
                    FontAttributes="Bold"
                    WidthRequest="250"/>
 
+        <!-- Champ pour le mot de passe -->
+        <Entry x:Name="PasswordEntry" 
+           Placeholder="Mot de passe" 
+           HorizontalOptions="Center" 
+           BackgroundColor="#5B000000"
+           FontSize="25"
+           FontAttributes="Bold"
+           WidthRequest="250"/>
+
         <Grid HorizontalOptions="Center" Margin="0,20,0,0">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="125"/>
@@ -45,13 +54,6 @@
             WidthRequest="125"
             Clicked="OnLoginButtonClicked"/>
 
-            <Button Grid.Column="1"
-            x:Name="UserButton" 
-            Text="Profil" 
-            BackgroundColor="Green"
-            TextColor="White"
-            WidthRequest="125"
-            Clicked="UserButton_Clicked"/>
         </Grid>
 
     </StackLayout>

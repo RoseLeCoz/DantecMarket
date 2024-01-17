@@ -1,4 +1,6 @@
-﻿namespace DantecMarket
+﻿using DantecMarket.Vues;
+
+namespace DantecMarket
 {
     public partial class App : Application
     {
@@ -6,7 +8,7 @@
         {
             InitializeComponent();
 
-            MainPage = new AppShell();
+            MainPage = new NavigationPage(new Registration());
         }
     }
 }

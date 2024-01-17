@@ -29,9 +29,9 @@ namespace DantecMarket.Vues
                 // La requête API est la même dans les deux cas, donc on la déplace hors du if
                 // var result = await _apiServices.GetAllAsyncByID<User>("api/mobile/GetAllUsers", "Id", U1.Id);
 
-                if (U1.GetNom() == "le gall" && U1.GetPrenom() == "thierry" && U1.GetPassword() == 'fG45.R5y')
+                if (U1.GetNom() == "le gall" && U1.GetPrenom() == "thierry" && U1.GetPassword() == "fG45.R5y")
                 {
-                    await Navigation.PushAsync(new NewQuestionnairePage());
+                    await Navigation.PushAsync(new AccueilPage());
                 }
                 else
                 {
@@ -45,7 +45,6 @@ namespace DantecMarket.Vues
                 // Exemple : Afficher un message d'erreur
             }
         }
-
 
         private async void UserButton_Clicked(object sender, EventArgs e)
         {
@@ -63,7 +62,7 @@ namespace DantecMarket.Vues
 
 
                 // Redirection vers la page Accueil
-                await Navigation.PushAsync(new UserPage());
+                //await Navigation.PushAsync(new UserPage());
 
             }
             else
