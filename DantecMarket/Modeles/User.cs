@@ -31,42 +31,28 @@ namespace DantecMarket.Modeles
         #endregion
 
         #region Getters/Setters
-        public int GetId()
+        public int Id
         {
-            return _id;
+            get => _id;
+            set => _id = value;
         }
 
-        public string GetNom()
+        public string Nom
         {
-            return _nom;
+            get => _nom;
+            set => _nom = value;
         }
 
-        public string SetNom(string nom)
+        public string Prenom
         {
-            _nom = nom;
-            return _nom;
+            get => _prenom;
+            set => _prenom = value;
         }
 
-        public string GetPrenom()
+        public string Password
         {
-            return _prenom;
-        }
-
-        public string SetPrenom(string prenom)
-        {
-            _prenom = prenom;
-            return _prenom;
-        }
-
-        public string GetPassword()
-        {
-            return _password;
-        }
-
-        public string SetPassword(string password)
-        {
-            _password = password;
-            return _password;
+            get => _password;
+            set => _password = value;
         }
         #endregion
 
