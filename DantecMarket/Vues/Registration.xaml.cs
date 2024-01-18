@@ -24,26 +24,12 @@ namespace DantecMarket.Vues
             User U1 = new User(1, nom, prenom, password);
             bool res = await U1.GetUserRegistration();
 
-            if (res)
+            if (res && U1.GetNom() == "le gall" && U1.GetPrenom() == "thierry" && U1.GetPassword() == "fG45.R5y")
             {
-                // La requête API est la même dans les deux cas, donc on la déplace hors du if
-                // var result = await _apiServices.GetAllAsyncByID<User>("api/mobile/GetAllUsers", "Id", U1.Id);
-
-                if (U1.GetNom() == "le gall" && U1.GetPrenom() == "thierry" && U1.GetPassword() == "fG45.R5y")
-                {
-                    await Navigation.PushAsync(new AccueilPage());
-                }
-                else
-                {
-                    // Redirection vers la page Accueil
-                    await Navigation.PushAsync(new AccueilPage());
-                }
+                await Navigation.PushAsync(new AccueilPage());
             }
             else
             {
-                // Gérer le cas où GetUserRegistration retourne false (si nécessaire)
-                // Exemple : Afficher un message d'erreur
-                //throw new ApplicationException("Problème dans le mot de passe ou le login.");
                 Console.WriteLine("Problème dans le mot de passe ou le login.");
             }
         }
