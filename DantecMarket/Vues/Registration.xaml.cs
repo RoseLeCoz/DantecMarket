@@ -43,32 +43,8 @@ namespace DantecMarket.Vues
             {
                 // Gérer le cas où GetUserRegistration retourne false (si nécessaire)
                 // Exemple : Afficher un message d'erreur
-            }
-        }
-
-        private async void UserButton_Clicked(object sender, EventArgs e)
-        {
-            var nom = NameEntry.Text;
-            var prenom = PrenomEntry.Text;
-            var password = PasswordEntry.Text;
-
-            User U1 = new User(1, nom, prenom, password);
-            bool res = await U1.GetUserRegistration();
-
-            if (res)
-            {
-                // La requête API est la même dans les deux cas, donc on la déplace hors du if
-                // var result = await _apiServices.GetAllAsyncByID<User>("api/mobile/GetAllUsers", "Id", U1.Id);
-
-
-                // Redirection vers la page Accueil
-                //await Navigation.PushAsync(new UserPage());
-
-            }
-            else
-            {
-                // Gérer le cas où GetUserRegistration retourne false (si nécessaire)
-                // Exemple : Afficher un message d'erreur
+                //throw new ApplicationException("Problème dans le mot de passe ou le login.");
+                Console.WriteLine("Problème dans le mot de passe ou le login.");
             }
         }
     }
