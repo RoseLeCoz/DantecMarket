@@ -53,7 +53,8 @@
             BackgroundColor="Green"
             TextColor="White"
             WidthRequest="125"
-            Clicked="OnLoginButtonClicked"/>
+            Clicked="OnLoginButtonClicked"
+            IsEnabled = "True"/>
 
         </Grid>
 

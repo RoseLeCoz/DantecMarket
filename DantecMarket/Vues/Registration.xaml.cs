@@ -24,7 +24,7 @@ namespace DantecMarket.Vues
             User U1 = new User(1, nom, prenom, password);
             bool res = await U1.GetUserRegistration();
 
-            if (res && U1.Nom == "le gall" && U1.Prenom == "thierry" && U1.Password == "fG45.R5y")
+            if (res && U1.Nom == "le gall" && U1.Prenom == "thierry" && U1.Password == "toto")
             {
                 await Navigation.PushAsync(new AccueilPage());
             }
