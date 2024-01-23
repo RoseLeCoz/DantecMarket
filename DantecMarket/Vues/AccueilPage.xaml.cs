@@ -14,5 +14,10 @@ namespace DantecMarket.Vues
         {
             InitializeComponent();
         }
+
+        private async void OnResearchButtonClicked(object sender, EventArgs e)
+        {
+            await Navigation.PushAsync(new RecherchePage());
+        }
     }
 }

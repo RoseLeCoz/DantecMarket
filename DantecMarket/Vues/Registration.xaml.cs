@@ -17,20 +17,24 @@ namespace DantecMarket.Vues
 
         private async void OnLoginButtonClicked(object sender, EventArgs e)
         {
-            var nom = NameEntry.Text;
+            var nom = NomEntry.Text;
             var prenom = PrenomEntry.Text;
             var password = PasswordEntry.Text;
 
             User U1 = new User(1, nom, prenom, password);
-            bool res = await U1.GetUserRegistration();
+            bool registrationSuccessful = await U1.GetUserRegistration();
 
-            if (res && U1.Nom == "le gall" && U1.Prenom == "thierry" && U1.Password == "toto")
+            if (registrationSuccessful)
             {
                 await Navigation.PushAsync(new AccueilPage());
             }
             else
             {
-                Console.WriteLine("Problème dans le mot de passe ou le login.");
+                // Afficher une boîte de dialogue avec un message d'erreur
+                await DisplayAlert("Erreur", "La connexion a échoué. Veuillez vérifier vos informations.", "OK");
+                // Redirection vers la page Accueil si l'inscription est réussie et les informations sont correctes,
+                // sinon redirection vers la page Registration
+                await Navigation.PushAsync(new Registration());
             }
         }
     }

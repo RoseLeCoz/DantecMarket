@@ -14,7 +14,7 @@
                WidthRequest="300"/>
 
         <!-- Champ pour le nom -->
-        <Entry x:Name="NameEntry" 
+        <Entry x:Name="NomEntry" 
                    Placeholder="Nom" 
                    HorizontalOptions="Center" 
                    WidthRequest="250"
