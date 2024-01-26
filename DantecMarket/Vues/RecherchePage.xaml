@@ -2,11 +2,55 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="DantecMarket.Vues.RecherchePage"
-             Title="RecherchePage">
-    <VerticalStackLayout>
-        <Label 
-            Text="Welcome to .NET MAUI!"
-            VerticalOptions="Center" 
-            HorizontalOptions="Center" />
-    </VerticalStackLayout>
+             NavigationPage.HasNavigationBar="False">
+
+    <ScrollView>
+        <VerticalStackLayout Spacing="25" Padding="30">
+
+            <!-- Logo en haut de la page -->
+            <StackLayout HorizontalOptions="Center" BackgroundColor="Black">
+                <Image Source="logo.jpg" WidthRequest="100" HeightRequest="100"/>
+                <!-- Add other header elements here -->
+            </StackLayout>
+
+            <!-- Barre de recherche -->
+            <Frame CornerRadius="20" Padding="0" HasShadow="False" BackgroundColor="#A49C9C">
+                <!-- Utilisez Frame pour arrondir les coins -->
+                <SearchBar BackgroundColor="Transparent" Placeholder="RECHERCHER UN PRODUIT" HorizontalOptions="FillAndExpand"/>
+            </Frame>
+
+            <!-- Titre de la section -->
+            <Label Text="Parcourir les catégories" 
+               FontAttributes="Bold" 
+               HorizontalOptions="Center" />
+
+            <!-- Grille pour les catégories -->
+            <Grid ColumnSpacing="20" RowSpacing="20">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+
+                <!-- Catégorie 1 -->
+                <Frame Grid.Column="0" Padding="10" CornerRadius="10">
+                    <StackLayout>
+                        <Image Source="categorie1.png" Aspect="AspectFill" />
+                        <Label Text="Une petite faim ?" HorizontalTextAlignment="Center" />
+                    </StackLayout>
+                </Frame>
+
+                <!-- Catégorie 2 -->
+                <Frame Grid.Column="1" Padding="10" CornerRadius="10">
+                    <StackLayout>
+                        <Image Source="categorie2.png" Aspect="AspectFill" />
+                        <Label Text="PRODUIT LOCAL" HorizontalTextAlignment="Center" />
+                    </StackLayout>
+                </Frame>
+
+                <!-- Plus de catégories peuvent être ajoutées ici -->
+            </Grid>
+
+        </VerticalStackLayout>
+    </ScrollView>
+
 </ContentPage>
