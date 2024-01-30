@@ -2,41 +2,62 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="DantecMarket.Vues.AccueilPage"
-             NavigationPage.HasNavigationBar="False">
+             BackgroundColor="#E3E3E3"
+             Title="AccueilPage">
     <ScrollView>
+
         <StackLayout Spacing="20">
-            <!-- Logo and header -->
-            <StackLayout HorizontalOptions="Center">
-                <Image Source="logo.jpg" WidthRequest="100" HeightRequest="100"/>
-                <!-- Add other header elements here -->
-            </StackLayout>
 
-            <!-- Current events section -->
-            <Frame BackgroundColor="LightGray" Padding="10" CornerRadius="10">
-                <StackLayout>
-                    <Label Text="En ce moment" />
-                    <!-- Placeholder for other contents -->
-                    <BoxView Color="Gray" HeightRequest="200" />
+
+            <Grid BackgroundColor="#2D2D2D">
+                <!-- Définition des lignes -->
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <!-- Ligne pour la section des événements actuels -->
+                    <RowDefinition Height="Auto"/>
+                    <!-- Ligne pour la section des points -->
+                </Grid.RowDefinitions>
+
+                <!-- Section des événements actuels -->
+                <!-- Catégorie 3 -->
+                <Frame Grid.Row="0" Padding="10" CornerRadius="10">
+                    <StackLayout>
+                        <Image Source="categorie3.jpg" Aspect="AspectFill" />
+                    </StackLayout>
+                </Frame>
+
+                <!-- Bouton sur image des produits en ce moment -->
+                <StackLayout Grid.Row="0" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand">
+                    <Button Text="En ce moment" TextColor="Black" Opacity="0.90">
+                        <Button.Background Opacity="0.80">
+                            <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
+                                <GradientStop Color="#DFBA61" Offset="0.0"/>
+                                <GradientStop Color="#F3E5AB" Offset="1.0" />
+                            </LinearGradientBrush>
+                        </Button.Background>
+                    </Button>
                 </StackLayout>
-            </Frame>
 
-            <!-- Points section -->
-            <StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand" >
-                <Label Text="Vous disposez de 40 points" HorizontalOptions="StartAndExpand"/>
-                <Button Text="En profiter">
-                    <Button.Background>
-                        <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
-                            <GradientStop Color="#be9e77" Offset="0.0" />
-                            <GradientStop Color="#e5d4b4" Offset="1.0" />
-                        </LinearGradientBrush>
-                    </Button.Background>
-                </Button>
-            </StackLayout>
+                <!-- Section des points -->
+                <StackLayout Grid.Row="1" Orientation="Horizontal" HorizontalOptions="FillAndExpand">
+                    <Label Text="Vous disposez de 40 points" HorizontalOptions="StartAndExpand" TextColor="White"/>
+                    <Button Text="En profiter">
+                        <Button.Background>
+                            <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
+                                <GradientStop Color="#be9e77" Offset="0.0" />
+                                <GradientStop Color="#e5d4b4" Offset="1.0" />
+                            </LinearGradientBrush>
+                        </Button.Background>
+                    </Button>
+                </StackLayout>
+            </Grid>
 
-            <!-- Categories section -->
+            <!-- Section des catégories -->
             <Label Text="Parcourir les catégories" HorizontalOptions="Center"/>
             <Grid>
                 <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
                     <RowDefinition Height="Auto" />
                     <RowDefinition Height="Auto" />
                 </Grid.RowDefinitions>
@@ -46,30 +67,22 @@
                     <ColumnDefinition Width="*" />
                 </Grid.ColumnDefinitions>
 
-                <!-- First row of categories -->
-                <Image Source="category1.png" Grid.Row="0" Grid.Column="0"/>
-                <Image Source="category2.png" Grid.Row="0" Grid.Column="1"/>
-                <Image Source="category3.png" Grid.Row="0" Grid.Column="2"/>
+                <!-- Première partie des catégories -->
+                <Image Source="categorie3.jpg" Grid.Row="0" Grid.Column="0"/>
+                <Image Source="categorie3.jpg" Grid.Row="0" Grid.Column="1"/>
+                <Image Source="categorie3.jpg" Grid.Row="0" Grid.Column="2"/>
                 <Label Text="Petite faim" Grid.Row="1" Grid.Column="0" HorizontalOptions="Center"/>
                 <Label Text="Produit locaux" Grid.Row="1" Grid.Column="1" HorizontalOptions="Center"/>
                 <Label Text="Nos sacs" Grid.Row="1" Grid.Column="2" HorizontalOptions="Center"/>
 
-                <!-- Second row of categories -->
-                <!-- Repeat the pattern for the second row -->
+                <!-- Seconde section des catégories -->
+                <Image Source="categorie3.jpg" Grid.Row="2" Grid.Column="0"/>
+                <Image Source="categorie3.jpg" Grid.Row="2" Grid.Column="1"/>
+                <Image Source="categorie3.jpg" Grid.Row="2" Grid.Column="2"/>
+                <Label Text="Petite faim" Grid.Row="3" Grid.Column="0" HorizontalOptions="Center"/>
+                <Label Text="Produit locaux" Grid.Row="3" Grid.Column="1" HorizontalOptions="Center"/>
+                <Label Text="Nos sacs" Grid.Row="3" Grid.Column="2" HorizontalOptions="Center"/>
             </Grid>
-
-            <!-- Bottom navigation bar -->
-            <StackLayout HorizontalOptions="FillAndExpand" Orientation="Horizontal" BackgroundColor="Black">
-                <Button ImageSource="homebutton.png"
-                        BackgroundColor="Transparent"/>
-                <Button ImageSource="recherchebutton.png"
-                        BackgroundColor="Transparent"
-                        x:Name="ResearchButton"
-                        WidthRequest="125"
-                        Clicked="OnResearchButtonClicked"
-                        IsEnabled = "True"/>
-                <Button ImageSource="icon3.png" />
-            </StackLayout>
         </StackLayout>
     </ScrollView>
 </ContentPage>

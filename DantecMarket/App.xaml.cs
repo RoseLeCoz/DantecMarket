@@ -8,7 +8,7 @@ namespace DantecMarket
         {
             InitializeComponent();
 
-            MainPage = new NavigationPage(new Registration());
+            MainPage = new AppShell();
         }
     }
 }

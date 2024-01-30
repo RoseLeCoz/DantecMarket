@@ -32,9 +32,6 @@ namespace DantecMarket.Vues
             {
                 // Afficher une boîte de dialogue avec un message d'erreur
                 await DisplayAlert("Erreur", "La connexion a échoué. Veuillez vérifier vos informations.", "OK");
-                // Redirection vers la page Accueil si l'inscription est réussie et les informations sont correctes,
-                // sinon redirection vers la page Registration
-                await Navigation.PushAsync(new Registration());
             }
         }
     }
