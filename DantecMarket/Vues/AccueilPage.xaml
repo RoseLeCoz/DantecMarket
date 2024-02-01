@@ -18,7 +18,7 @@
                 <!-- Définition des lignes -->
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="*"/>
-                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="150"/>
                 </Grid.ColumnDefinitions>
 
                 <!-- Section des événements actuels -->
@@ -40,10 +40,18 @@
                                    VerticalOptions="Center"
                                    IndicatorColor="DarkGray"
                                    SelectedIndicatorColor="White"
-                                   IndicatorsShape="Square"
                                    IndicatorSize="10"
                                    Count="{Binding Source={x:Reference carouselViewProduits}, Path=ItemsSource.Count}"
-                                   Position="{Binding Source={x:Reference carouselViewProduits}, Path=Position}" />
+                                   Position="{Binding Source={x:Reference carouselViewProduits}, Path=Position}" >
+                        <IndicatorView.IndicatorTemplate>
+                            <DataTemplate>
+                                <BoxView WidthRequest="20"
+                                         HeightRequest="5"
+                                         CornerRadius="2"
+                                         Color="{Binding ., Converter={StaticResource IndicatorColorConverter}}"/>
+                            </DataTemplate>
+                        </IndicatorView.IndicatorTemplate>
+                    </IndicatorView>
                 </VerticalStackLayout>
 
                 <!-- Bouton sur image des produits en ce moment -->
@@ -62,7 +70,7 @@
                 <StackLayout Grid.Row="1" Grid.Column="0" Orientation="Horizontal" HorizontalOptions="Center">
                     <Label Text="Vous disposez de 10 points" HorizontalOptions="StartAndExpand" TextColor="White" VerticalOptions="Center"/>
                 </StackLayout>
-                
+
                 <AbsoluteLayout Grid.Row="1" Grid.Column="1" HorizontalOptions="Center" VerticalOptions="CenterAndExpand">
                     <Button Text="En profiter" CornerRadius="50">
                         <Button.Background>
