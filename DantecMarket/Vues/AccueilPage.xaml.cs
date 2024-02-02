@@ -34,7 +34,7 @@ namespace DantecMarket.Vues
             // Configuration et démarrage du timer
             timerCarousel = new Timer
             {
-                Interval = 8000, // Changez l'image toutes les 2 secondes
+                Interval = 6000, // Change l'image toutes les 6 secondes
                 AutoReset = true,
                 Enabled = true
             };
@@ -59,7 +59,7 @@ namespace DantecMarket.Vues
             {
                 timerCarousel = new Timer
                 {
-                    Interval = 8000, // Changez l'image toutes les 2 secondes
+                    Interval = 6000, // Change l'image toutes les 6 secondes
                     AutoReset = true
                 };
                 timerCarousel.Elapsed += OnTimedEvent;
@@ -80,6 +80,5 @@ namespace DantecMarket.Vues
                 timerCarousel = null;
             }
         }
-
     }
 }

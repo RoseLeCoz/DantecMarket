@@ -45,7 +45,7 @@
                                    Position="{Binding Source={x:Reference carouselViewProduits}, Path=Position}" >
                         <IndicatorView.IndicatorTemplate>
                             <DataTemplate>
-                                <BoxView WidthRequest="20"
+                                <BoxView WidthRequest="75"
                                          HeightRequest="5"
                                          CornerRadius="2"
                                          Color="{Binding ., Converter={StaticResource IndicatorColorConverter}}"/>

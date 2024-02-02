@@ -2,49 +2,96 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="DantecMarket.Vues.Registration"
-             Title="Registration"
-             BackgroundColor="#E3E3E3">
+             Title="Registration">
 
-    <VerticalStackLayout Spacing="15"
-                         Padding="30"
-                         VerticalOptions="Center" 
-                         HorizontalOptions="FillAndExpand">
+    <!-- Utilisation de AbsoluteLayout pour la superposition d'éléments -->
+    <AbsoluteLayout HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+        <!-- Image de fond avec opacité directement définie -->
+        <Image Source="dantec.jpg"
+               Aspect="AspectFill"
+               Opacity="0.4"
+               AbsoluteLayout.LayoutFlags="All"
+               AbsoluteLayout.LayoutBounds="0, 0, 1, 1"/>
 
-        <Label Text="Bienvenue au Dantec Market"
-               HorizontalOptions="Center"
-               Margin="0,0,0,20"
-               FontSize="Large"
-               FontAttributes="Bold" />
+        <!-- VerticalStackLayout pour les éléments de formulaire -->
+        <VerticalStackLayout Spacing="15"
+                             Padding="30"
+                             VerticalOptions="Center" 
+                             HorizontalOptions="FillAndExpand"
+                             AbsoluteLayout.LayoutBounds="0.5, 0.5, 1, -1"
+                             AbsoluteLayout.LayoutFlags="All">
+            <Grid VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="300"/>
+                </Grid.ColumnDefinitions>
 
-        <Entry x:Name="NomEntry"
-	           Placeholder="Nom"
-               TextColor="Black"
-               BackgroundColor="White"
-               Margin="0,0,0,10"
-               FontSize="Medium" />
+                <Label Grid.Row="0"
+                       Text="Bienvenue au"
+                       HorizontalOptions="StartAndExpand"
+                       FontSize="17"
+                       FontAttributes="Bold"
+                       TextColor="Black" />
 
-        <Entry x:Name="PrenomEntry"
-               Placeholder="Prénom"
-               TextColor="Black"
-               BackgroundColor="White"
-               Margin="0,0,0,10"
-               FontSize="Medium" />
+                <Label Grid.Row="1"
+                       Text="Dantec Market"
+                       HorizontalOptions="StartAndExpand"
+                       Margin="0,0,0,20"
+                       FontSize="35"
+                       FontAttributes="Bold"
+                       TextColor="Black" />
 
-        <Entry x:Name="PasswordEntry"
-               Placeholder="Mot de passe"
-               IsPassword="True"
-               TextColor="Black"
-               BackgroundColor="White"
-               Margin="0,0,0,10"
-               FontSize="Medium" />
+                <Entry Grid.Row="2"
+                       x:Name="NomEntry"
+	                   Placeholder="Nom"
+                       TextColor="Black"
+                       BackgroundColor="White"
+                       Margin="0,0,0,10"
+                       FontSize="Medium"
+                       MaximumWidthRequest="300"/>
 
-        <Button x:Name="LoginButton"
-                Text="Connexion"
-                BackgroundColor="Orange"
-                TextColor="White"
-                Margin="0,0,0,10"
-                CornerRadius="5"
-                Clicked="OnLoginButtonClicked"/>
-    </VerticalStackLayout>
+                <Entry Grid.Row="3"
+                       x:Name="PrenomEntry"
+                       Placeholder="Prénom"
+                       TextColor="Black"
+                       BackgroundColor="White"
+                       Margin="0,0,0,10"
+                       FontSize="Medium"
+                       MaximumWidthRequest="300"/>
 
+                <Entry Grid.Row="4"
+                       x:Name="PasswordEntry"
+                       Placeholder="Mot de passe"
+                       IsPassword="True"
+                       TextColor="Black"
+                       BackgroundColor="White"
+                       Margin="0,0,0,10"
+                       FontSize="Medium"
+                       MaximumWidthRequest="300"/>
+
+                <Button Grid.Row="5"
+                        x:Name="LoginButton"
+                        Text="Connexion"
+                        TextColor="Black"
+                        Margin="0,0,0,10"
+                        CornerRadius="50"
+                        WidthRequest="200"
+                        Clicked="OnLoginButtonClicked">
+                    <Button.Background>
+                        <LinearGradientBrush StartPoint="0,0" EndPoint="1,0">
+                            <GradientStop Color="#DFBA61" Offset="0.0" />
+                            <GradientStop Color="#F3E5AB" Offset="1.0" />
+                        </LinearGradientBrush>
+                    </Button.Background>
+                </Button>
+            </Grid>
+        </VerticalStackLayout>
+    </AbsoluteLayout>
 </ContentPage>

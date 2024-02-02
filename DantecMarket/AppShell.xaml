@@ -5,8 +5,8 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     xmlns:Vues="clr-namespace:DantecMarket.Vues"
     Shell.FlyoutBehavior="Flyout"
-    BackgroundColor="#2D2D2D"
-    Opacity="0">
+    BackgroundColor="Black"
+    Shell.FlyoutItemIsVisible="True">
 
     <!-- Définition de la barre de navigation personnalisée -->
     <Shell.TitleView>
@@ -41,20 +41,16 @@
         </Grid>
     </Shell.TitleView>
 
+    <ShellContent Title="Connexion"
+                  ContentTemplate="{DataTemplate Vues:Registration}"
+                  Route="Registration" />
+    
+    <ShellContent Title="Accueil"
+                  ContentTemplate="{DataTemplate Vues:AccueilPage}"
+                  Route="AccueilPage" />
 
-    <ShellContent
-        Title="Accueil"
-        ContentTemplate="{DataTemplate Vues:AccueilPage}"
-        Route="AccueilPage" />
-
-    <ShellContent
-    Title="Recherche"
-    ContentTemplate="{DataTemplate Vues:RecherchePage}"
-    Route="RecherchePage" />
-
-    <ShellContent
-    Title="Connexion"
-    ContentTemplate="{DataTemplate Vues:Registration}"
-    Route="Registration" />
+    <ShellContent Title="Recherche"
+                  ContentTemplate="{DataTemplate Vues:RecherchePage}"
+                  Route="RecherchePage" />
 
 </Shell>
