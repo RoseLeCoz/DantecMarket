@@ -3,13 +3,54 @@
     x:Class="DantecMarket.AppShell"
     xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-    xmlns:local="clr-namespace:DantecMarket"
-    Shell.FlyoutBehavior="Disabled"
-    Title="DantecMarket">
+    xmlns:Vues="clr-namespace:DantecMarket.Vues"
+    Shell.FlyoutBehavior="Flyout"
+    BackgroundColor="Black"
+    Shell.FlyoutItemIsVisible="True">
 
-    <ShellContent
-        Title="Home"
-        ContentTemplate="{DataTemplate local:MainPage}"
-        Route="MainPage" />
+    <!-- Définition de la barre de navigation personnalisée -->
+    <Shell.TitleView>
+        <Grid HorizontalOptions="FillAndExpand">
+            <Grid.ColumnDefinitions>
+                <!-- Largeur pour la barre de navigation -->
+                <ColumnDefinition Width="Auto" />
+                <!-- Largeur pour le logo -->
+                <ColumnDefinition Width="*" />
+                <!-- Largeur équilibrée pour l'espace à droite -->
+                <ColumnDefinition Width="Auto" />
+            </Grid.ColumnDefinitions>
+
+            <!-- Espace réservé pour la barre de navigation -->
+            <BoxView Grid.Column="0" BackgroundColor="Transparent" />
+
+            <!-- Logo au centre -->
+            <Image Grid.Column="1"
+                   Source="logo.jpg" 
+                   HeightRequest="50" 
+                   WidthRequest="50"
+                   Aspect="AspectFill"
+                   HorizontalOptions="Center" 
+                   VerticalOptions="Center">
+                <Image.Clip>
+                    <EllipseGeometry Center="25,25" RadiusX="25" RadiusY="25"/>
+                </Image.Clip>
+            </Image>
+
+            <!-- Espace réservé pour équilibrer la largeur à droite -->
+            <BoxView Grid.Column="2" BackgroundColor="Transparent" />
+        </Grid>
+    </Shell.TitleView>
+
+    <ShellContent Title="Connexion"
+                  ContentTemplate="{DataTemplate Vues:Registration}"
+                  Route="Registration" />
+    
+    <ShellContent Title="Accueil"
+                  ContentTemplate="{DataTemplate Vues:AccueilPage}"
+                  Route="AccueilPage" />
+
+    <ShellContent Title="Recherche"
+                  ContentTemplate="{DataTemplate Vues:RecherchePage}"
+                  Route="RecherchePage" />
 
 </Shell>
