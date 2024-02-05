@@ -6,8 +6,10 @@
     xmlns:Vues="clr-namespace:DantecMarket.Vues"
     BackgroundColor="#2D2D2D"
     Shell.TabBarIsVisible="True"
-    Shell.TabBarForegroundColor="Red"
-    Shell.>
+    Shell.TabBarForegroundColor="White"
+    Shell.TabBarTitleColor="White"
+    Shell.TabBarBackgroundColor="#2D2D2D"
+    Shell.TabBarUnselectedColor="DimGrey">
 
     <!-- Définition de la barre de navigation personnalisée -->
     <Shell.TitleView>
@@ -19,12 +21,14 @@
                    Aspect="AspectFill"
                    HorizontalOptions="Center" 
                    VerticalOptions="Center">
+            <!-- Transformer le logo carré en un logo rond  -->
             <Image.Clip>
                 <EllipseGeometry Center="25,25" RadiusX="25" RadiusY="25"/>
             </Image.Clip>
         </Image>
     </Shell.TitleView>
 
+    <!-- Barre de navigation en bas de page -->
     <TabBar>
         <Tab Title="Accueil"
             Icon="https://img.icons8.com/ios-filled/50/000000/home.png">
