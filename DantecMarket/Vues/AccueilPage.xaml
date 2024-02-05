@@ -8,11 +8,10 @@
 
         <StackLayout Spacing="20">
 
-
             <Grid BackgroundColor="#2D2D2D">
                 <!-- Définition des lignes -->
                 <Grid.RowDefinitions>
-                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="Auto"/>
                     <RowDefinition Height="60"/>
                 </Grid.RowDefinitions>
                 <!-- Définition des lignes -->
@@ -25,7 +24,8 @@
                 <!-- Image des produits en ce moment -->
                 <VerticalStackLayout Grid.Row="0" Grid.ColumnSpan="2">
                     <!-- CarouselView pour les images des produits -->
-                    <CarouselView x:Name="carouselViewProduits">
+                    <CarouselView x:Name="carouselViewProduits"
+                                  Margin="0,20,0,20">
                         <CarouselView.ItemTemplate>
                             <DataTemplate>
                                 <Image Source="{Binding .}"
@@ -72,7 +72,7 @@
                 </StackLayout>
 
                 <AbsoluteLayout Grid.Row="1" Grid.Column="1" HorizontalOptions="Center" VerticalOptions="CenterAndExpand">
-                    <Button Text="En profiter" CornerRadius="50">
+                    <Button Text="En profiter" CornerRadius="50" TextColor="Black">
                         <Button.Background>
                             <LinearGradientBrush StartPoint="0,0" EndPoint="1,0">
                                 <GradientStop Color="#DFBA61" Offset="0.0" />

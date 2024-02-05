@@ -5,8 +5,9 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     xmlns:Vues="clr-namespace:DantecMarket.Vues"
     Shell.FlyoutBehavior="Flyout"
-    BackgroundColor="Black"
-    Shell.FlyoutItemIsVisible="True">
+    BackgroundColor="#2D2D2D"
+    Shell.FlyoutItemIsVisible="True"
+    Shell.FlyoutBackdrop="#2D2D2D">
 
     <!-- Définition de la barre de navigation personnalisée -->
     <Shell.TitleView>
@@ -15,7 +16,7 @@
                 <!-- Largeur pour la barre de navigation -->
                 <ColumnDefinition Width="Auto" />
                 <!-- Largeur pour le logo -->
-                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="265" />
                 <!-- Largeur équilibrée pour l'espace à droite -->
                 <ColumnDefinition Width="Auto" />
             </Grid.ColumnDefinitions>
@@ -43,7 +44,7 @@
 
     <ShellContent Title="Connexion"
                   ContentTemplate="{DataTemplate Vues:Registration}"
-                  Route="Registration" />
+                  Route="Registration"/>
     
     <ShellContent Title="Accueil"
                   ContentTemplate="{DataTemplate Vues:AccueilPage}"

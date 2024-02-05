@@ -6,51 +6,11 @@
 
     <ScrollView>
         <StackLayout Spacing="20">
-            
-            <!-- Barre de navigation personnalisée -->
-            <Grid BackgroundColor="#2D2D2D" HeightRequest="75">
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="*"/>
-                    <ColumnDefinition Width="*"/>
-                    <ColumnDefinition Width="*"/>
-                </Grid.ColumnDefinitions>
 
-                <!-- Espace pour les éléments à gauche -->
-                <Label Text="" TextColor="White" HorizontalOptions="Start" VerticalOptions="Center" Grid.Column="0" />
-
-                <!-- Logo au milieu -->
-                <Frame HeightRequest="70" 
-                       WidthRequest="70"
-                       CornerRadius="50" 
-                       Padding="0" 
-                       IsClippedToBounds="True" 
-                       HorizontalOptions="Center" 
-                       VerticalOptions="Center" 
-                       BackgroundColor="White" 
-                       HasShadow="False"
-                       Grid.Column="1">
-                    <!-- Image carrée à l'intérieur du cercle -->
-                    <Image Source="logo.png" Aspect="AspectFill"/>
-                </Frame>
-
-                <!-- Espace pour les éléments à droite -->
-                <Label Text="" TextColor="White" HorizontalOptions="End" VerticalOptions="Center" Grid.Column="2" />
-            </Grid>
-
-            <!-- Barre de recherche -->
-            <Frame CornerRadius="20" Padding="0" HasShadow="False" BackgroundColor="#A49C9C">
-                <!-- Utilisez Frame pour arrondir les coins -->
-                <SearchBar BackgroundColor="Transparent" Placeholder="RECHERCHER UN PRODUIT" HorizontalOptions="FillAndExpand"/>
-            </Frame>
-
-            <!-- Titre de la section -->
-            <Label Text="Parcourir les catégories" 
-               FontAttributes="Bold" 
-               HorizontalOptions="Center" />
-
-            <!-- Grille pour les catégories -->
+            <!-- Grille pour la page -->
             <Grid ColumnSpacing="20" RowSpacing="20">
                 <Grid.RowDefinitions>
+                    <RowDefinition Height="*" />
                     <RowDefinition Height="*" />
                     <RowDefinition Height="*" />
                     <RowDefinition Height="*" />
@@ -61,8 +21,20 @@
                     <ColumnDefinition Width="*" />
                 </Grid.ColumnDefinitions>
 
+                <!-- Barre de recherche -->
+                <Frame Grid.ColumnSpan="3" Grid.Row="0" CornerRadius="20" Padding="0" HasShadow="False" BackgroundColor="#A49C9C" Margin="20,20,20,0">
+                    <!-- Utilisez Frame pour arrondir les coins -->
+                    <SearchBar BackgroundColor="Transparent" Placeholder="RECHERCHER UN PRODUIT" HorizontalOptions="FillAndExpand"/>
+                </Frame>
+
+                <!-- Titre de la section -->
+                <Label Grid.ColumnSpan="3" Grid.Row="1"
+                       Text="Parcourir les catégories" 
+                       FontAttributes="Bold" 
+                       HorizontalOptions="Center" />
+
                 <!-- Catégorie 1 -->
-                <Frame Grid.Column="0" Grid.Row="0" Padding="10" CornerRadius="10">
+                <Frame Grid.Column="0" Grid.Row="2" Padding="10" CornerRadius="10">
                     <StackLayout>
                         <Image Source="categorie1.png" Aspect="AspectFill" />
                         <Label Text="Épicerie sucrée" HorizontalTextAlignment="Center" />
@@ -70,7 +42,7 @@
                 </Frame>
 
                 <!-- Catégorie 2 -->
-                <Frame Grid.Column="1" Grid.Row="0" Padding="10" CornerRadius="10">
+                <Frame Grid.Column="1" Grid.Row="2" Padding="10" CornerRadius="10">
                     <StackLayout>
                         <Image Source="categorie2.png" Aspect="AspectFill" />
                         <Label Text="Épicerie salée" HorizontalTextAlignment="Center" />
@@ -78,7 +50,7 @@
                 </Frame>
 
                 <!-- Catégorie 3 -->
-                <Frame Grid.Column="2" Grid.Row="0" Padding="10" CornerRadius="10">
+                <Frame Grid.Column="2" Grid.Row="2" Padding="10" CornerRadius="10">
                     <StackLayout>
                         <Image Source="categorie3.jpg" Aspect="AspectFill" />
                         <Label Text="Boissons" HorizontalTextAlignment="Center" />
@@ -86,12 +58,13 @@
                 </Frame>
 
                 <!-- Catégorie 4 -->
-                <StackLayout Grid.Column="0" Grid.Row="1" Padding="10">
-                    <ImageButton Source="boissons.jpg"
-                    HorizontalOptions="Center"
-                    VerticalOptions="Center"
-                                 />
+                <Frame Grid.Column="0" Grid.Row="3" Padding="10" CornerRadius="10">
+                <StackLayout>
+                    <ImageButton Source="categorie3.jpg"
+                                 Aspect="AspectFit"/>
+                    <Label Text="Boissons" HorizontalTextAlignment="Center" />
                 </StackLayout>
+                </Frame>
 
             </Grid>
 
