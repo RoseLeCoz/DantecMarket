@@ -87,10 +87,11 @@
             <Label Text="Parcourir les catégories" HorizontalOptions="Center" FontSize="Medium" FontAttributes="Bold"/>
             <Grid>
                 <Grid.RowDefinitions>
-                    <RowDefinition Height="Auto" />
-                    <RowDefinition Height="Auto" />
-                    <RowDefinition Height="Auto" />
-                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="*" />
+                    <RowDefinition Height="*" />
+                    <RowDefinition Height="*" />
+                    <RowDefinition Height="*" />
+                    <RowDefinition Height="*" />
                 </Grid.RowDefinitions>
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="*" />
@@ -98,21 +99,105 @@
                     <ColumnDefinition Width="*" />
                 </Grid.ColumnDefinitions>
 
-                <!-- Première partie des catégories -->
-                <Image Source="categorie3.jpg" Grid.Row="0" Grid.Column="0" HeightRequest="110"/>
-                <Image Source="categorie3.jpg" Grid.Row="0" Grid.Column="1" HeightRequest="110"/>
-                <Image Source="categorie3.jpg" Grid.Row="0" Grid.Column="2" HeightRequest="110"/>
-                <Label Text="Petite faim" Grid.Row="1" Grid.Column="0" HorizontalOptions="Center"/>
-                <Label Text="Produit locaux" Grid.Row="1" Grid.Column="1" HorizontalOptions="Center"/>
-                <Label Text="Nos sacs" Grid.Row="1" Grid.Column="2" HorizontalOptions="Center"/>
+                <!-- Partie avec les catégories -->
+                <Frame Grid.Row="0" Grid.Column="0" CornerRadius="20" BackgroundColor="#E3E3E3" BorderColor="Transparent">
+                    <StackLayout>
+                        <ImageButton Source="categorie3.jpg"  HeightRequest="110" CornerRadius="20" Aspect="AspectFill"/>
+                        <Label Text="Epicerie sucrée" HorizontalOptions="Center"/>
+                    </StackLayout>
+                </Frame>
 
-                <!-- Seconde section des catégories -->
-                <Image Source="categorie3.jpg" Grid.Row="2" Grid.Column="0" HeightRequest="110"/>
-                <Image Source="categorie3.jpg" Grid.Row="2" Grid.Column="1" HeightRequest="110"/>
-                <Image Source="categorie3.jpg" Grid.Row="2" Grid.Column="2" HeightRequest="110"/>
-                <Label Text="Petite faim" Grid.Row="3" Grid.Column="0" HorizontalOptions="Center"/>
-                <Label Text="Produit locaux" Grid.Row="3" Grid.Column="1" HorizontalOptions="Center"/>
-                <Label Text="Nos sacs" Grid.Row="3" Grid.Column="2" HorizontalOptions="Center"/>
+                <Frame Grid.Row="0" Grid.Column="1" CornerRadius="20" BackgroundColor="#E3E3E3" BorderColor="Transparent">
+                    <StackLayout>
+                        <ImageButton Source="categorie3.jpg" HeightRequest="110" CornerRadius="20" Aspect="AspectFill"/>
+                        <Label Text="Epicerie salée" HorizontalOptions="Center"/>
+                    </StackLayout>
+                </Frame>
+
+                <Frame Grid.Row="0" Grid.Column="2" CornerRadius="20" BackgroundColor="#E3E3E3" BorderColor="Transparent">
+                    <StackLayout>
+                        <ImageButton Source="categorie3.jpg" HeightRequest="110" CornerRadius="20" Aspect="AspectFill"/>
+                        <Label Text="Boissons" HorizontalOptions="Center"/>
+                    </StackLayout>
+                </Frame>
+
+                <Frame Grid.Row="1" Grid.Column="0" CornerRadius="20" BackgroundColor="#E3E3E3" BorderColor="Transparent">
+                    <StackLayout>
+                        <ImageButton Source="categorie3.jpg" HeightRequest="110" CornerRadius="20" Aspect="AspectFill"/>
+                        <Label Text="Beauté-Esthétique" HorizontalOptions="Center"/>
+                    </StackLayout>
+                </Frame>
+
+                <Frame Grid.Row="1" Grid.Column="1" CornerRadius="20" BackgroundColor="#E3E3E3" BorderColor="Transparent">
+                    <StackLayout>
+                        <ImageButton Source="categorie3.jpg" HeightRequest="110" CornerRadius="20" Aspect="AspectFill"/>
+                        <Label Text="Papeterie" HorizontalOptions="Center"/>
+                    </StackLayout>
+                </Frame>
+
+                <Frame Grid.Row="1" Grid.Column="2" CornerRadius="20" BackgroundColor="#E3E3E3" BorderColor="Transparent">
+                    <StackLayout>
+                        <ImageButton Source="categorie3.jpg" HeightRequest="110" CornerRadius="20" Aspect="AspectFill"/>
+                        <Label Text="Décoration" HorizontalOptions="Center"/>
+                    </StackLayout>
+                </Frame>
+
+                <Frame Grid.Row="2" Grid.Column="0" CornerRadius="20" BackgroundColor="#E3E3E3" BorderColor="Transparent">
+                    <StackLayout>
+                        <ImageButton Source="categorie3.jpg" HeightRequest="110" CornerRadius="20" Aspect="AspectFill"/>
+                        <Label Text="Bijoux" HorizontalOptions="Center"/>
+                    </StackLayout>
+                </Frame>
+
+                <Frame Grid.Row="2" Grid.Column="1" CornerRadius="20" BackgroundColor="#E3E3E3" BorderColor="Transparent">
+                    <StackLayout>
+                        <ImageButton Source="categorie3.jpg" HeightRequest="110" CornerRadius="20" Aspect="AspectFill"/>
+                        <Label Text="Textiles" HorizontalOptions="Center"/>
+                    </StackLayout>
+                </Frame>
+
+                <Frame Grid.Row="2" Grid.Column="2" CornerRadius="20" BackgroundColor="#E3E3E3" BorderColor="Transparent">
+                    <StackLayout>
+                        <ImageButton Source="categorie3.jpg" HeightRequest="110" CornerRadius="20" Aspect="AspectFill"/>
+                        <Label Text="Librairie" HorizontalOptions="Center"/>
+                    </StackLayout>
+                </Frame>
+
+                <Frame Grid.Row="3" Grid.Column="0" CornerRadius="20" BackgroundColor="#E3E3E3" BorderColor="Transparent">
+                    <StackLayout>
+                        <ImageButton Source="categorie3.jpg" HeightRequest="110" CornerRadius="20" Aspect="AspectFill"/>
+                        <Label Text="Animalerie" HorizontalOptions="Center"/>
+                    </StackLayout>
+                </Frame>
+
+                <Frame Grid.Row="3" Grid.Column="1" CornerRadius="20" BackgroundColor="#E3E3E3" BorderColor="Transparent">
+                    <StackLayout>
+                        <ImageButton Source="categorie3.jpg" HeightRequest="110" CornerRadius="20" Aspect="AspectFill"/>
+                        <Label Text="Produits tendances" HorizontalOptions="Center"/>
+                    </StackLayout>
+                </Frame>
+
+                <Frame Grid.Row="3" Grid.Column="2" CornerRadius="20" BackgroundColor="#E3E3E3" BorderColor="Transparent" VerticalOptions="CenterAndExpand">
+                    <StackLayout>
+                        <ImageButton Source="categorie3.jpg" HeightRequest="110" CornerRadius="20" Aspect="AspectFill"/>
+                        <Label Text="Seconde main" />
+                    </StackLayout>
+                </Frame>
+
+                <Frame Grid.Row="4" Grid.Column="0" CornerRadius="20" BackgroundColor="#E3E3E3" BorderColor="Transparent">
+                    <StackLayout>
+                        <ImageButton Source="categorie3.jpg" HeightRequest="110" CornerRadius="20" Aspect="AspectFill"/>
+                        <Label Text="Zéro déchet" HorizontalOptions="Center"/>
+                    </StackLayout>
+                </Frame>
+
+                <Frame Grid.Row="4" Grid.Column="1" CornerRadius="20" BackgroundColor="#E3E3E3" BorderColor="Transparent">
+                    <StackLayout>
+                        <ImageButton Source="categorie3.jpg" HeightRequest="110" CornerRadius="20" Aspect="AspectFill"/>
+                        <Label Text="Promotions" HorizontalOptions="Center" />
+                    </StackLayout>
+                </Frame>
+
             </Grid>
         </StackLayout>
     </ScrollView>

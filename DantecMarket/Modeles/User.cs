@@ -77,7 +77,6 @@ namespace DantecMarket.Modeles
                     // Si la collection ne doit contenir que l'utilisateur actuel, c'est correct.
                     User.CollClasse.Clear();
 
-
                     return true;
                 }
             }

@@ -14,6 +14,7 @@
                     <RowDefinition Height="*" />
                     <RowDefinition Height="*" />
                     <RowDefinition Height="*" />
+                    <RowDefinition Height="*" />
                 </Grid.RowDefinitions>
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="*" />
@@ -24,17 +25,34 @@
                 <!-- Barre de recherche -->
                 <Frame Grid.ColumnSpan="3" Grid.Row="0" CornerRadius="20" Padding="0" HasShadow="False" BackgroundColor="#A49C9C" Margin="20,20,20,0">
                     <!-- Utilisez Frame pour arrondir les coins -->
-                    <SearchBar BackgroundColor="Transparent" Placeholder="RECHERCHER UN PRODUIT" HorizontalOptions="FillAndExpand"/>
+                    <SearchBar x:Name="searchBar"  BackgroundColor="Transparent" Placeholder="RECHERCHER UN PRODUIT" HorizontalOptions="FillAndExpand"/>
+                </Frame>
+
+                <!-- Filtre de recherche -->
+                <Frame Grid.ColumnSpan="3" Grid.Row="1" CornerRadius="20" Padding="0" HasShadow="False" BackgroundColor="#A49C9C" Margin="20,20,20,0">
+                    <StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand">
+                        <!-- Sélecteur de filtre -->
+                        <Picker x:Name="filterPicker" Title="Filtrer par" HorizontalOptions="EndAndExpand" WidthRequest="150">
+                            <Picker.ItemsSource>
+                                <x:Array Type="{x:Type x:String}">
+                                    <x:String>Catégorie</x:String>
+                                    <x:String>Prix</x:String>
+                                    <x:String>Marque</x:String>
+                                    <!-- Autres critères de filtrage -->
+                                </x:Array>
+                            </Picker.ItemsSource>
+                        </Picker>
+                    </StackLayout>
                 </Frame>
 
                 <!-- Titre de la section -->
-                <Label Grid.ColumnSpan="3" Grid.Row="1"
+                <Label Grid.ColumnSpan="3" Grid.Row="2"
                        Text="Parcourir les catégories" 
                        FontAttributes="Bold" 
                        HorizontalOptions="Center" />
 
                 <!-- Catégorie 1 -->
-                <Frame Grid.Column="0" Grid.Row="2" Padding="10" CornerRadius="10">
+                <Frame Grid.Column="0" Grid.Row="3" Padding="10" CornerRadius="10">
                     <StackLayout>
                         <Image Source="categorie1.png" Aspect="AspectFill" />
                         <Label Text="Épicerie sucrée" HorizontalTextAlignment="Center" />
@@ -42,7 +60,7 @@
                 </Frame>
 
                 <!-- Catégorie 2 -->
-                <Frame Grid.Column="1" Grid.Row="2" Padding="10" CornerRadius="10">
+                <Frame Grid.Column="1" Grid.Row="3" Padding="10" CornerRadius="10">
                     <StackLayout>
                         <Image Source="categorie2.png" Aspect="AspectFill" />
                         <Label Text="Épicerie salée" HorizontalTextAlignment="Center" />
@@ -50,7 +68,7 @@
                 </Frame>
 
                 <!-- Catégorie 3 -->
-                <Frame Grid.Column="2" Grid.Row="2" Padding="10" CornerRadius="10">
+                <Frame Grid.Column="2" Grid.Row="3" Padding="10" CornerRadius="10">
                     <StackLayout>
                         <Image Source="categorie3.jpg" Aspect="AspectFill" />
                         <Label Text="Boissons" HorizontalTextAlignment="Center" />
@@ -58,10 +76,11 @@
                 </Frame>
 
                 <!-- Catégorie 4 -->
-                <Frame Grid.Column="0" Grid.Row="3" Padding="10" CornerRadius="10">
+                <Frame Grid.Column="0" Grid.Row="4" Padding="10" CornerRadius="10">
                 <StackLayout>
                     <ImageButton Source="categorie3.jpg"
-                                 Aspect="AspectFit"/>
+                                 Aspect="AspectFit"
+                                 HeightRequest="110"/>
                     <Label Text="Boissons" HorizontalTextAlignment="Center" />
                 </StackLayout>
                 </Frame>
