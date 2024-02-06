@@ -26,20 +26,16 @@
                 </Grid.ColumnDefinitions>
 
                 <!-- Barre de recherche -->
-                <Frame Grid.ColumnSpan="3" Grid.Row="0" CornerRadius="20" Padding="0" HasShadow="False" BackgroundColor="#A49C9C" Margin="20,20,20,0">
-                    <!-- Utilisez Frame pour arrondir les coins -->
-                    <SearchBar x:Name="searchBar"  BackgroundColor="Transparent" Placeholder="RECHERCHER UN PRODUIT" HorizontalOptions="FillAndExpand"/>
-                </Frame>
-
-                <!-- Filtre de recherche -->
-                <Frame Grid.ColumnSpan="3" Grid.Row="1" CornerRadius="20" Padding="0" HasShadow="False" BackgroundColor="#A49C9C" Margin="20,20,20,0">
-                    <StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand">
+                <Frame Grid.ColumnSpan="3" Grid.RowSpan="2" CornerRadius="20" Padding="0" HasShadow="False" BackgroundColor="#A49C9C" Margin="20,20,20,0">
+                    <StackLayout>
+                        <!-- Utilisez Frame pour arrondir les coins -->
+                        <SearchBar Grid.Row="0" x:Name="searchBar"  BackgroundColor="Transparent" Placeholder="RECHERCHER UN PRODUIT" HorizontalOptions="StartAndExpand"/>
                         <!-- Sélecteur de filtre -->
-                        <Picker x:Name="filterPicker" Title="Filtrer par catégorie" HorizontalOptions="EndAndExpand" WidthRequest="150">
+                        <Picker Grid.Row="1"  x:Name="filterPicker" Title="Filtrer par catégorie" HorizontalOptions="StartAndExpand" Margin="20,0,0,0">
                             <Picker.ItemsSource>
                                 <x:Array Type="{x:Type x:String}">
-                                    <x:String>Catégorie</x:String>
-                                    <x:String>Prix</x:String>
+                                    <x:String>Epicerie sucrée</x:String>
+                                    <x:String>Epicerie salé</x:String>
                                     <x:String>Marque</x:String>
                                     <!-- Autres critères de filtrage -->
                                 </x:Array>
