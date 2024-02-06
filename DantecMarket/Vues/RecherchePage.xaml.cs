@@ -1,48 +1,75 @@
 using Microsoft.Maui.Storage;
 using System;
+using System.Collections.ObjectModel;
+using System.Windows.Input;
 
 namespace DantecMarket.Vues
 {
     public partial class RecherchePage : ContentPage
     {
-        // Variable pour stocker le critère de filtrage sélectionné
-        private string selectedFilter;
+        public ObservableCollection<string> SelectedFilters { get; set; }
+        public ICommand RemoveFilterCommand { get; private set; } // Commande pour supprimer un filtre
 
         public RecherchePage()
         {
             InitializeComponent();
 
-            // Assurez-vous que le nom de votre Picker et de votre SearchBar correspond à ceux définis dans votre XAML
-            filterPicker.SelectedIndexChanged += FilterPicker_SelectedIndexChanged;
+            SelectedFilters = new ObservableCollection<string>();
+            selectedFiltersView.ItemsSource = SelectedFilters;
+
+            RemoveFilterCommand = new Command<string>(RemoveFilter); // Initialiser la commande
+
+            filterPicker.SelectedIndexChanged += OnFilterSelected;
             searchBar.SearchButtonPressed += SearchBar_SearchButtonPressed;
         }
 
         // Gestionnaire d'événements pour le changement de sélection du Picker
-        private void FilterPicker_SelectedIndexChanged(object sender, EventArgs e)
+        private void OnFilterSelected(object sender, EventArgs e)
         {
-            if (filterPicker.SelectedIndex == -1)
+            var picker = sender as Picker;
+            if (picker == null || picker.SelectedIndex == -1) return;
+
+            var selectedFilter = picker.SelectedItem as string;
+            if (!SelectedFilters.Contains(selectedFilter))
             {
-                selectedFilter = null;
+                SelectedFilters.Add(selectedFilter);
             }
-            else
-            {
-                selectedFilter = (string)filterPicker.ItemsSource[filterPicker.SelectedIndex];
-            }
+
+            // Réinitialiser la sélection du Picker
+            picker.SelectedIndex = -1;
         }
 
         // Gestionnaire d'événements pour la recherche
         private void SearchBar_SearchButtonPressed(object sender, EventArgs e)
         {
-            var searchText = searchBar.Text;
-            PerformSearch(searchText, selectedFilter);
+            var searchText = searchBar.Text ?? string.Empty;
+            PerformSearch(searchText);
         }
 
-        // Méthode pour effectuer la recherche avec le texte et le filtre sélectionné
-        private void PerformSearch(string searchText, string filter)
+        // Méthode pour effectuer la recherche avec le texte et les filtres sélectionnés
+        private void PerformSearch(string searchText)
         {
-            // Ajoutez ici votre logique de recherche
-            // Par exemple, filtrer votre liste de produits en fonction du searchText et du filter
-            Console.WriteLine($"Recherche de '{searchText}' avec le filtre '{filter}'");
+            // Logique de recherche
+            Console.WriteLine($"Recherche de '{searchText}' avec les filtres '{string.Join(", ", SelectedFilters)}'");
+        }
+
+        // Méthode pour supprimer un filtre de la liste
+        private void RemoveFilter(string filter)
+        {
+            SelectedFilters.Remove(filter);
+        }
+
+        public void RemoveFilterButton_Clicked(object sender, EventArgs e)
+        {
+            var button = sender as Button;
+            if (button != null)
+            {
+                var filter = button.CommandParameter as string;
+                if (SelectedFilters.Contains(filter))
+                {
+                    SelectedFilters.Remove(filter);
+                }
+            }
         }
     }
 }

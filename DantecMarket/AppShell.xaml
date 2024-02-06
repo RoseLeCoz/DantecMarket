@@ -28,7 +28,7 @@
         </Image>
     </Shell.TitleView>
 
-    <!-- Barre de navigation en bas de page -->
+    <!-- Barre de navigation afficher en bas de page -->
     <TabBar>
         <Tab Title="Accueil"
             Icon="https://img.icons8.com/ios-filled/50/000000/home.png">

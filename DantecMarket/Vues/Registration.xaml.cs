@@ -30,8 +30,8 @@ namespace DantecMarket.Vues
             }
             else
             {
-                // Afficher une boîte de dialogue avec un message d'erreur
-                await DisplayAlert("Erreur", "La connexion a échoué. Veuillez vérifier vos informations.", "OK");
+                // Afficher un message d'erreur
+                await DisplayAlert("Erreur", "La connexion a échouée. Veuillez vérifier vos informations.", "OK");
             }
         }
     }
