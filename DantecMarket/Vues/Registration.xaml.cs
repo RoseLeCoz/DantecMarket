@@ -21,12 +21,13 @@ namespace DantecMarket.Vues
             var prenom = PrenomEntry.Text;
             var password = PasswordEntry.Text;
 
-            User U1 = new User(1, nom, prenom, password);
+            User U1 = new User(nom, prenom, password);
             bool registrationSuccessful = await U1.GetUserRegistration();
 
             if (registrationSuccessful)
             {
-                await Navigation.PushAsync(new AccueilPage());
+                Application.Current.MainPage = new AppShell();
+                await Shell.Current.GoToAsync("//AccueilPage");
             }
             else
             {
@@ -34,5 +35,6 @@ namespace DantecMarket.Vues
                 await DisplayAlert("Erreur", "La connexion a échouée. Veuillez vérifier vos informations.", "OK");
             }
         }
+
     }
 }

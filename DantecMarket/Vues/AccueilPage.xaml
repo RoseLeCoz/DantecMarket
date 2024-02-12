@@ -24,8 +24,7 @@
                 <!-- Image des produits en ce moment -->
                 <VerticalStackLayout Grid.Row="0" Grid.ColumnSpan="2">
                     <!-- CarouselView pour les images des produits -->
-                    <CarouselView x:Name="carouselViewProduits"
-                                  Margin="0,20,0,20">
+                    <CarouselView x:Name="imageCarousel" Margin="0,20,0,20" Loop="True" ItemsSource="{Binding imagesProduits}">
                         <CarouselView.ItemTemplate>
                             <DataTemplate>
                                 <Image Source="{Binding .}"
@@ -41,17 +40,9 @@
                                    IndicatorColor="DarkGray"
                                    SelectedIndicatorColor="White"
                                    IndicatorSize="10"
-                                   Count="{Binding Source={x:Reference carouselViewProduits}, Path=ItemsSource.Count}"
-                                   Position="{Binding Source={x:Reference carouselViewProduits}, Path=Position}" >
-                        <IndicatorView.IndicatorTemplate>
-                            <DataTemplate>
-                                <BoxView WidthRequest="75"
-                                         HeightRequest="5"
-                                         CornerRadius="2"
-                                         Color="{Binding ., Converter={StaticResource IndicatorColorConverter}}"/>
-                            </DataTemplate>
-                        </IndicatorView.IndicatorTemplate>
-                    </IndicatorView>
+                                   Count="{Binding Images.Count}"
+                                   BindingContext="{x:Reference imageCarousel}"
+                                   IndicatorTemplate="{StaticResource imageIndicatorTemplate}" />
                 </VerticalStackLayout>
 
                 <!-- Bouton sur image des produits en ce moment -->
@@ -102,7 +93,7 @@
                 <!-- Partie avec les catégories -->
                 <Frame Grid.Row="0" Grid.Column="0" CornerRadius="20" BackgroundColor="#E3E3E3" BorderColor="Transparent">
                     <StackLayout>
-                        <ImageButton Source="categorie3.jpg"  HeightRequest="110" CornerRadius="20" Aspect="AspectFill"/>
+                        <ImageButton Source="epicerie_sucree.jpg" CommandParameter="Epicerie sucrée" Clicked="OnCategorieClicked" HeightRequest="110" CornerRadius="20" Aspect="AspectFill"/>
                         <Label Text="Epicerie sucrée" HorizontalOptions="Center" HorizontalTextAlignment="Center" LineBreakMode="WordWrap" />
                     </StackLayout>
                 </Frame>

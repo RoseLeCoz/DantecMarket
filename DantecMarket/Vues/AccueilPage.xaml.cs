@@ -6,79 +6,59 @@ using Microsoft.Maui.Dispatching;
 using System;
 using System.Collections.ObjectModel;
 using System.Timers;
-using Timer = System.Timers.Timer;
+using Timer = System.Threading.Timer;
 
 namespace DantecMarket.Vues
 {
     public partial class AccueilPage : ContentPage
     {
         private readonly GestionApi _apiServices = new GestionApi();
-        private int currentPosition = 0;
-        private Timer timerCarousel;
-        private List<string> imagesProduits; // Déclarée au niveau de la classe
+        private int _currentIndex = 0;
+        private List<string> Images = new List<string>();
+        private Timer _carouselTimer;
 
         public AccueilPage()
         {
             InitializeComponent();
 
-            // Initialiser la variable membre de la classe, et non une variable locale
-            imagesProduits = new List<string>
-        {
-            "logo.jpg",
-            "categorie3.jpg",
-            "dotnet_bot.png"
-        };
+            // Exemple d'ajout d'images
+            Images.Add("categorie3.jpg");
+            Images.Add("logo.jpg");
+            Images.Add("epicerie_sucree.jpg");
 
-            carouselViewProduits.ItemsSource = imagesProduits;
+            imageCarousel.ItemsSource = Images;
 
-            // Configuration et démarrage du timer
-            timerCarousel = new Timer
-            {
-                Interval = 6000, // Change l'image toutes les 6 secondes
-                AutoReset = true,
-                Enabled = true
-            };
-            timerCarousel.Elapsed += OnTimedEvent;
-            timerCarousel.Start();
+            // Initialiser et démarrer le Timer
+            _carouselTimer = new Timer(ChangeImage, null, 6000, 6000);
         }
 
-        private void OnTimedEvent(Object source, ElapsedEventArgs e)
+        private void ChangeImage(object state)
         {
+            // Changer l'image sur le thread UI
             MainThread.BeginInvokeOnMainThread(() =>
             {
-                currentPosition = (currentPosition + 1) % imagesProduits.Count;
-                carouselViewProduits.Position = currentPosition;
+                _currentIndex++;
+                if (_currentIndex >= Images.Count)
+                    _currentIndex = 0;
+
+                imageCarousel.Position = _currentIndex;
             });
         }
 
-        protected override void OnAppearing()
+        private async void OnCategorieClicked(object sender, EventArgs e)
         {
-            base.OnAppearing();
-
-            if (timerCarousel == null)
+            var bouton = sender as ImageButton;
+            if (bouton != null)
             {
-                timerCarousel = new Timer
-                {
-                    Interval = 6000, // Change l'image toutes les 6 secondes
-                    AutoReset = true
-                };
-                timerCarousel.Elapsed += OnTimedEvent;
-            }
+                var categorieName = bouton.CommandParameter.ToString();
 
-            timerCarousel.Start();
-        }
+                // Vous pouvez passer le nom de la catégorie à la page de produits via son constructeur
+                // ou utiliser une méthode pour définir les produits après la navigation
+                var lesProduitsPage = new LesProduitsPage(); // Assurez-vous que votre ProductPage peut accepter une string dans son constructeur
 
-        protected override void OnDisappearing()
-        {
-            base.OnDisappearing();
-
-            if (timerCarousel != null)
-            {
-                timerCarousel.Stop();
-                timerCarousel.Elapsed -= OnTimedEvent; // Important pour éviter les fuites de mémoire
-                timerCarousel.Dispose();
-                timerCarousel = null;
+                await Navigation.PushAsync(lesProduitsPage);
             }
         }
+
     }
 }

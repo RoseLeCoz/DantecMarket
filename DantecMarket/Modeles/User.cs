@@ -1,4 +1,5 @@
 ﻿using DantecMarket.Apis;
+using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -11,7 +12,6 @@ namespace DantecMarket.Modeles
     public class User
     {
         #region Attributs
-        private int _id;
         private string _nom;
         private string _prenom;
         private string _password;
@@ -20,10 +20,9 @@ namespace DantecMarket.Modeles
         #endregion
 
         #region Constructeur
-        public User(int id, string nom, string prenom, string password)
+        public User(string nom, string prenom, string password)
         {
             User.CollClasse.Add(this);
-            this._id = id;
             this._nom = nom;
             this._prenom = prenom;
             this._password = password;
@@ -31,24 +30,21 @@ namespace DantecMarket.Modeles
         #endregion
 
         #region Getters/Setters
-        public int Id
-        {
-            get => _id;
-            set => _id = value;
-        }
-
+        [JsonProperty("Nom")]
         public string Nom
         {
             get => _nom;
             set => _nom = value;
         }
 
+        [JsonProperty("Prenom")]
         public string Prenom
         {
             get => _prenom;
             set => _prenom = value;
         }
 
+        [JsonProperty("Password")]
         public string Password
         {
             get => _password;

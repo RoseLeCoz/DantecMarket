@@ -9,8 +9,10 @@ using System.Linq;
 using System.Net;
 using System.Text;
 using System.Threading.Tasks;
+using DantecMarket.Modeles;
+using System.Net.Http;
 
-namespace DantecMarket.Apis
+namespace DantecMarket.Apis 
 {
     public class GestionApi
     {
@@ -174,7 +176,7 @@ namespace DantecMarket.Apis
                 return default(T);
             }
         }
-        
+
 
 
     }

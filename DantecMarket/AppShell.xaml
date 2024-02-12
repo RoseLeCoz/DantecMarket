@@ -11,9 +11,13 @@
     Shell.TabBarBackgroundColor="#2D2D2D"
     Shell.TabBarUnselectedColor="DimGrey">
 
+    <Shell.BackButtonBehavior>
+        <BackButtonBehavior IsEnabled="True" />
+    </Shell.BackButtonBehavior>
+    
     <!-- Définition de la barre de navigation personnalisée -->
     <Shell.TitleView>
-        
+
         <!-- Logo au centre -->
         <Image Source="logo.jpg" 
                    HeightRequest="50" 
@@ -30,7 +34,8 @@
 
     <!-- Barre de navigation afficher en bas de page -->
     <TabBar>
-        <Tab Title="Accueil"
+        <Tab Route="AccueilPage"
+            Title="Accueil"
             Icon="https://img.icons8.com/ios-filled/50/000000/home.png">
             <ShellContent ContentTemplate="{DataTemplate Vues:AccueilPage}" />
         </Tab>
@@ -40,7 +45,7 @@
         </Tab>
         <Tab Title="Panier"
              Icon="https://img.icons8.com/material-rounded/50/shopping-cart.png">
-            <ShellContent ContentTemplate="{DataTemplate Vues:Registration}" />
+            <ShellContent ContentTemplate="{DataTemplate Vues:PanierPage}" />
         </Tab>
         <Tab Title="Compte"
              Icon="https://img.icons8.com/ios-glyphs/50/user--v1.png">
