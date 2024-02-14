@@ -3,8 +3,7 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="DantecMarket.Vues.Registration"
              Title="Registration"
-             Shell.TabBarIsVisible="False"
-             Shell.TitleView="false">
+             Shell.TabBarIsVisible="False">
 
     <!-- Utilisation de AbsoluteLayout pour la superposition d'éléments -->
     <AbsoluteLayout HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">

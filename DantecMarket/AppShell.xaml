@@ -12,7 +12,7 @@
     Shell.TabBarUnselectedColor="DimGrey">
 
     <Shell.BackButtonBehavior>
-        <BackButtonBehavior IsEnabled="True" />
+        <BackButtonBehavior IsVisible="False" />
     </Shell.BackButtonBehavior>
     
     <!-- Définition de la barre de navigation personnalisée -->
@@ -20,11 +20,11 @@
 
         <!-- Logo au centre -->
         <Image Source="logo.jpg" 
-                   HeightRequest="50" 
-                   WidthRequest="50"
-                   Aspect="AspectFill"
-                   HorizontalOptions="Center" 
-                   VerticalOptions="Center">
+               HeightRequest="50" 
+               WidthRequest="50" 
+               Aspect="AspectFill" 
+               HorizontalOptions="Center" 
+               VerticalOptions="Center">
             <!-- Transformer le logo carré en un logo rond  -->
             <Image.Clip>
                 <EllipseGeometry Center="25,25" RadiusX="25" RadiusY="25"/>

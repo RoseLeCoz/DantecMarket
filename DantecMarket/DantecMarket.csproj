@@ -102,9 +102,6 @@
 	  <MauiXaml Update="Vues\AccueilPage.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
-	  <MauiXaml Update="Vues\LesProduitsPage.xaml">
-	    <Generator>MSBuild:Compile</Generator>
-	  </MauiXaml>
 	  <MauiXaml Update="Vues\PanierPage.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>

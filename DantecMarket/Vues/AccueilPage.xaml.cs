@@ -54,7 +54,7 @@ namespace DantecMarket.Vues
 
                 // Vous pouvez passer le nom de la catégorie à la page de produits via son constructeur
                 // ou utiliser une méthode pour définir les produits après la navigation
-                var lesProduitsPage = new LesProduitsPage(); // Assurez-vous que votre ProductPage peut accepter une string dans son constructeur
+                var lesProduitsPage = new ProduitPage(); // Assurez-vous que votre ProductPage peut accepter une string dans son constructeur
 
                 await Navigation.PushAsync(lesProduitsPage);
             }

@@ -11,5 +11,6 @@ namespace DantecMarket
     {
         public static string BaseApiAddress => "http://172.17.0.64/";
         public static User CurrentUser = null;
+        public static Produit CurrentProduit = null;
     }
 }
