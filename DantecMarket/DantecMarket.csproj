@@ -89,9 +89,9 @@
 	</ItemGroup>
 
 	<ItemGroup>
-		<PackageReference Include="EcoCore" Version="7.0.0.15391" />
-		<PackageReference Include="Microsoft.Maui.Controls" Version="8.0.6" />
-		<PackageReference Include="Microsoft.Maui.Controls.Compatibility" Version="8.0.6" />
+		<PackageReference Include="EcoCore" Version="7.0.0.15435" />
+		<PackageReference Include="Microsoft.Maui.Controls" Version="8.0.7" />
+		<PackageReference Include="Microsoft.Maui.Controls.Compatibility" Version="8.0.7" />
 		<PackageReference Include="Microsoft.Extensions.Logging.Debug" Version="8.0.0" />
 		<PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
 		<PackageReference Include="sqlite-net-pcl" Version="1.8.116" />
@@ -100,6 +100,9 @@
 
 	<ItemGroup>
 	  <MauiXaml Update="Vues\AccueilPage.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="Vues\CategoriePage.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
 	  <MauiXaml Update="Vues\PanierPage.xaml">

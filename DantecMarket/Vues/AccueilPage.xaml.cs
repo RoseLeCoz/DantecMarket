@@ -30,6 +30,22 @@ namespace DantecMarket.Vues
 
             // Initialiser et démarrer le Timer
             _carouselTimer = new Timer(ChangeImage, null, 6000, 6000);
+
+            imageCarousel.PositionChanged += CarouselView_PositionChanged;
+        }
+
+        protected override void OnAppearing()
+        {
+            base.OnAppearing();
+            // Redémarre le timer lors du retour sur la page
+            _carouselTimer?.Change(0, 6000);
+        }
+
+        protected override void OnDisappearing()
+        {
+            base.OnDisappearing();
+            // Arrête le timer lorsqu'on quitte la page pour éviter des appels inutiles
+            _carouselTimer?.Change(Timeout.Infinite, Timeout.Infinite);
         }
 
         private void ChangeImage(object state)
@@ -45,20 +61,21 @@ namespace DantecMarket.Vues
             });
         }
 
+        private void CarouselView_PositionChanged(object sender, PositionChangedEventArgs e)
+        {
+            _currentIndex = e.CurrentPosition;
+        }
+
         private async void OnCategorieClicked(object sender, EventArgs e)
         {
             var bouton = sender as ImageButton;
             if (bouton != null)
             {
                 var categorieName = bouton.CommandParameter.ToString();
+                var lesCategories = new CategoriePage(); // Assurez-vous que votre ProductPage peut accepter une string dans son constructeur
 
-                // Vous pouvez passer le nom de la catégorie à la page de produits via son constructeur
-                // ou utiliser une méthode pour définir les produits après la navigation
-                var lesProduitsPage = new ProduitPage(); // Assurez-vous que votre ProductPage peut accepter une string dans son constructeur
-
-                await Navigation.PushAsync(lesProduitsPage);
+                await Navigation.PushAsync(lesCategories);
             }
         }
-
     }
 }

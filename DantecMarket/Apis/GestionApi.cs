@@ -32,6 +32,7 @@ namespace DantecMarket.Apis
                 throw;
             }
         }
+
         public async Task<T> GetAllAsyncOne<T>(string url)
         {
             try
@@ -84,6 +85,7 @@ namespace DantecMarket.Apis
                 return new HttpResponseMessage(HttpStatusCode.InternalServerError);  // Retourne une réponse d'erreur en cas d'exception
             }
         }
+
         private async Task<int?> ProcessResponseForIdAsync(HttpResponseMessage response)
         {
             if (!response.IsSuccessStatusCode)
@@ -95,6 +97,7 @@ namespace DantecMarket.Apis
             var content = await response.Content.ReadAsStringAsync();
             return int.TryParse(content, out var id) ? id : null;
         }
+
         public async Task<ObservableCollection<T>> GetAllAsyncByID<T>(string endpoint, string key, int value)
         {
             try
@@ -123,6 +126,7 @@ namespace DantecMarket.Apis
                 return null;
             }
         }
+
         public async Task<T> GetOneAsyncByID<T>(string endpoint, string idValue)
         {
             try
@@ -151,6 +155,7 @@ namespace DantecMarket.Apis
                 return default(T);
             }
         }
+
         public async Task<T> GetOneAsync<T>(string endpoint, T requestDataObj)
         {
             try
@@ -176,8 +181,6 @@ namespace DantecMarket.Apis
                 return default(T);
             }
         }
-
-
 
     }
 }

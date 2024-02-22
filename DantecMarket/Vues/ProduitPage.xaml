@@ -11,13 +11,13 @@
     <ScrollView>
         <VerticalStackLayout Spacing="25" Padding="30">
             <Label Text="Nom du produit" FontAttributes="Bold" />
-            <Label x:Name="ProduitName" />
+            <Label x:Name="ProduitNom" />
 
             <Label Text="Description" FontAttributes="Bold" />
             <Label x:Name="ProduitDescription" />
 
             <Label Text="Prix" FontAttributes="Bold" />
-            <Label x:Name="ProduitPrice" />
+            <Label x:Name="ProduitPrix" />
         </VerticalStackLayout>
     </ScrollView>
 </ContentPage>
