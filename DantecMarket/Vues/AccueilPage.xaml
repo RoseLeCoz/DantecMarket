@@ -65,120 +65,21 @@
 
             <!-- Section des catégories -->
             <Label Text="Parcourir les catégories" HorizontalOptions="Center" FontSize="Medium" FontAttributes="Bold"/>
-            <Grid>
-                <Grid.RowDefinitions>
-                    <RowDefinition Height="*" />
-                    <RowDefinition Height="*" />
-                    <RowDefinition Height="*" />
-                    <RowDefinition Height="*" />
-                    <RowDefinition Height="*" />
-                </Grid.RowDefinitions>
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="*" />
-                    <ColumnDefinition Width="*" />
-                    <ColumnDefinition Width="*" />
-                </Grid.ColumnDefinitions>
-
-                <!-- Partie avec les catégories -->
-                <Frame Grid.Row="0" Grid.Column="0" CornerRadius="20" BackgroundColor="#E3E3E3" BorderColor="Transparent">
-                    <StackLayout>
-                        <ImageButton Source="epicerie_sucree.jpg" CommandParameter="Epicerie sucrée" Clicked="OnCategorieClicked" HeightRequest="110" CornerRadius="20" Aspect="AspectFill"/>
-                        <Label Text="Epicerie sucrée" HorizontalOptions="Center" HorizontalTextAlignment="Center" LineBreakMode="WordWrap" />
-                    </StackLayout>
-                </Frame>
-
-                <Frame Grid.Row="0" Grid.Column="1" CornerRadius="20" BackgroundColor="#E3E3E3" BorderColor="Transparent">
-                    <StackLayout>
-                        <ImageButton Source="categorie3.jpg" HeightRequest="110" CornerRadius="20" Aspect="AspectFill"/>
-                        <Label Text="Epicerie salée" HorizontalOptions="Center" HorizontalTextAlignment="Center" LineBreakMode="WordWrap"/>
-                    </StackLayout>
-                </Frame>
-
-                <Frame Grid.Row="0" Grid.Column="2" CornerRadius="20" BackgroundColor="#E3E3E3" BorderColor="Transparent">
-                    <StackLayout>
-                        <ImageButton Source="categorie3.jpg" HeightRequest="110" CornerRadius="20" Aspect="AspectFill"/>
-                        <Label Text="Boissons" HorizontalOptions="Center" HorizontalTextAlignment="Center" LineBreakMode="WordWrap"/>
-                    </StackLayout>
-                </Frame>
-
-                <Frame Grid.Row="1" Grid.Column="0" CornerRadius="20" BackgroundColor="#E3E3E3" BorderColor="Transparent">
-                    <StackLayout>
-                        <ImageButton Source="categorie3.jpg" HeightRequest="110" CornerRadius="20" Aspect="AspectFill"/>
-                        <Label Text="Beauté-Esthétique" HorizontalOptions="Center" HorizontalTextAlignment="Center" LineBreakMode="WordWrap"/>
-                    </StackLayout>
-                </Frame>
-
-                <Frame Grid.Row="1" Grid.Column="1" CornerRadius="20" BackgroundColor="#E3E3E3" BorderColor="Transparent">
-                    <StackLayout>
-                        <ImageButton Source="categorie3.jpg" HeightRequest="110" CornerRadius="20" Aspect="AspectFill"/>
-                        <Label Text="Papeterie" HorizontalOptions="Center" HorizontalTextAlignment="Center" LineBreakMode="WordWrap"/>
-                    </StackLayout>
-                </Frame>
-
-                <Frame Grid.Row="1" Grid.Column="2" CornerRadius="20" BackgroundColor="#E3E3E3" BorderColor="Transparent">
-                    <StackLayout>
-                        <ImageButton Source="categorie3.jpg" HeightRequest="110" CornerRadius="20" Aspect="AspectFill"/>
-                        <Label Text="Décoration" HorizontalOptions="Center" HorizontalTextAlignment="Center" LineBreakMode="WordWrap"/>
-                    </StackLayout>
-                </Frame>
-
-                <Frame Grid.Row="2" Grid.Column="0" CornerRadius="20" BackgroundColor="#E3E3E3" BorderColor="Transparent">
-                    <StackLayout>
-                        <ImageButton Source="categorie3.jpg" HeightRequest="110" CornerRadius="20" Aspect="AspectFill"/>
-                        <Label Text="Bijoux" HorizontalOptions="Center" HorizontalTextAlignment="Center" LineBreakMode="WordWrap"/>
-                    </StackLayout>
-                </Frame>
-
-                <Frame Grid.Row="2" Grid.Column="1" CornerRadius="20" BackgroundColor="#E3E3E3" BorderColor="Transparent">
-                    <StackLayout>
-                        <ImageButton Source="categorie3.jpg" HeightRequest="110" CornerRadius="20" Aspect="AspectFill"/>
-                        <Label Text="Textiles" HorizontalOptions="Center" HorizontalTextAlignment="Center" LineBreakMode="WordWrap"/>
-                    </StackLayout>
-                </Frame>
-
-                <Frame Grid.Row="2" Grid.Column="2" CornerRadius="20" BackgroundColor="#E3E3E3" BorderColor="Transparent">
-                    <StackLayout>
-                        <ImageButton Source="categorie3.jpg" HeightRequest="110" CornerRadius="20" Aspect="AspectFill"/>
-                        <Label Text="Librairie" HorizontalOptions="Center" HorizontalTextAlignment="Center" LineBreakMode="WordWrap"/>
-                    </StackLayout>
-                </Frame>
-
-                <Frame Grid.Row="3" Grid.Column="0" CornerRadius="20" BackgroundColor="#E3E3E3" BorderColor="Transparent">
-                    <StackLayout>
-                        <ImageButton Source="categorie3.jpg" HeightRequest="110" CornerRadius="20" Aspect="AspectFill"/>
-                        <Label Text="Animalerie" HorizontalOptions="Center" HorizontalTextAlignment="Center" LineBreakMode="WordWrap"/>
-                    </StackLayout>
-                </Frame>
-
-                <Frame Grid.Row="3" Grid.Column="1" CornerRadius="20" BackgroundColor="#E3E3E3" BorderColor="Transparent">
-                    <StackLayout>
-                        <ImageButton Source="categorie3.jpg" HeightRequest="110" CornerRadius="20" Aspect="AspectFill"/>
-                        <Label Text="Produits tendances" HorizontalOptions="Center" HorizontalTextAlignment="Center" LineBreakMode="WordWrap"/>
-                    </StackLayout>
-                </Frame>
-
-                <Frame Grid.Row="3" Grid.Column="2" CornerRadius="20" BackgroundColor="#E3E3E3" BorderColor="Transparent" VerticalOptions="CenterAndExpand">
-                    <StackLayout>
-                        <ImageButton Source="categorie3.jpg" HeightRequest="110" CornerRadius="20" Aspect="AspectFill"/>
-                        <Label Text="Seconde main" HorizontalOptions="Center" HorizontalTextAlignment="Center" LineBreakMode="WordWrap"/>
-                    </StackLayout>
-                </Frame>
-
-                <Frame Grid.Row="4" Grid.Column="0" CornerRadius="20" BackgroundColor="#E3E3E3" BorderColor="Transparent">
-                    <StackLayout>
-                        <ImageButton Source="categorie3.jpg" HeightRequest="110" CornerRadius="20" Aspect="AspectFill"/>
-                        <Label Text="Zéro déchet" HorizontalOptions="Center" HorizontalTextAlignment="Center" LineBreakMode="WordWrap"/>
-                    </StackLayout>
-                </Frame>
-
-                <Frame Grid.Row="4" Grid.Column="1" CornerRadius="20" BackgroundColor="#E3E3E3" BorderColor="Transparent">
-                    <StackLayout>
-                        <ImageButton Source="categorie3.jpg" HeightRequest="110" CornerRadius="20" Aspect="AspectFill"/>
-                        <Label Text="Promotions" HorizontalOptions="Center" HorizontalTextAlignment="Center" LineBreakMode="WordWrap"/>
-                    </StackLayout>
-                </Frame>
-
-            </Grid>
+            <CollectionView x:Name="CategoriesCollectionView">
+                <CollectionView.ItemsLayout>
+                    <GridItemsLayout Orientation="Vertical" Span="3" />
+                </CollectionView.ItemsLayout>
+                <CollectionView.ItemTemplate>
+                    <DataTemplate>
+                        <Frame CornerRadius="20" BackgroundColor="#E3E3E3" BorderColor="Transparent">
+                            <StackLayout>
+                                <ImageButton Source="epicerie_sucree.jpg" CommandParameter="Epicerie sucrée" Clicked="OnCategorieClicked" HeightRequest="110" CornerRadius="20" Aspect="AspectFill"/>
+                                <Label Text="{Binding Nom}" HorizontalOptions="Center" HorizontalTextAlignment="Center" LineBreakMode="WordWrap" />
+                            </StackLayout>
+                        </Frame>
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+            </CollectionView>
         </StackLayout>
     </ScrollView>
 </ContentPage>

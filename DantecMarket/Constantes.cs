@@ -13,5 +13,6 @@ namespace DantecMarket
         public static User CurrentUser = null;
         public static Produit CurrentProduit = null;
         public static Categorie CurrentCategorie = null;
+        public static SousCategorie CurrentSousCategorie = null;
     }
 }

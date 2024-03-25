@@ -57,7 +57,6 @@ namespace DantecMarket.Modeles
         {
             try
             {
-                // Assurez-vous que _apiServices est initialisé
                 if (_apiServices == null)
                 {
                     throw new InvalidOperationException("_apiServices not initialized");
@@ -68,9 +67,6 @@ namespace DantecMarket.Modeles
                 if (resultat != null)
                 {
                     Constantes.CurrentUser = resultat;
-
-                    // Vérifiez si c'est vraiment ce que vous voulez faire.
-                    // Si la collection ne doit contenir que l'utilisateur actuel, c'est correct.
                     User.CollClasse.Clear();
 
                     return true;

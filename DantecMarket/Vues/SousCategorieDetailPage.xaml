@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="DantecMarket.Vues.CategoriePage"
-             Title="CategoriePage">
+             x:Class="DantecMarket.Vues.SousCategorieDetailPage"
+             Title="SousCategorieDetailPage">
     <Shell.BackButtonBehavior>
         <BackButtonBehavior IsVisible="False" />
     </Shell.BackButtonBehavior>
@@ -11,12 +11,13 @@
         <VerticalStackLayout Spacing="25" Padding="30">
             <CollectionView x:Name="CollectionViewCategories">
                 <CollectionView.ItemsLayout>
-                    <GridItemsLayout Orientation="Vertical" Span="3" />
+                    <GridItemsLayout Orientation="Vertical" Span="3" VerticalItemSpacing="20"/>
                 </CollectionView.ItemsLayout>
                 <CollectionView.ItemTemplate>
                     <DataTemplate>
                         <StackLayout>
-                            <Label Text="{Binding Nom}"/>
+                            <Label Text="{Binding Nom}" HorizontalOptions="Center" VerticalOptions="Center"/>
+                            <Label Text="{Binding Id}" HorizontalOptions="Center" VerticalOptions="Center"/>
                         </StackLayout>
                     </DataTemplate>
                 </CollectionView.ItemTemplate>

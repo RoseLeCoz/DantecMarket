@@ -29,33 +29,8 @@
                     <StackLayout BindingContext="{x:Reference Name=RecherchePage}">
                         <!-- Barre de recherche -->
                         <SearchBar Grid.Row="0" x:Name="searchBar"  BackgroundColor="Transparent" Placeholder="RECHERCHER UN PRODUIT" HorizontalOptions="StartAndExpand"/>
-
-                        <!-- Sélecteur de filtre -->
-                        <Picker Grid.Row="1" x:Name="filterPicker" Title="Filtrer par catégorie" HorizontalOptions="StartAndExpand" Margin="20,0,0,0" SelectedIndexChanged="OnFilterSelected">
-                            <Picker.ItemsSource>
-                                <x:Array Type="{x:Type x:String}">
-                                    <x:String>Epicerie sucrée</x:String>
-                                    <x:String>Epicerie salée</x:String>
-                                    <x:String>Marque</x:String>
-                                    <!-- Autres critères de filtrage -->
-                                </x:Array>
-                            </Picker.ItemsSource>
-                        </Picker>
-
-                        <!-- Affichage des filtres sélectionnés avec une option de désélection -->
-                        <CollectionView x:Name="selectedFiltersView" HorizontalOptions="EndAndExpand" Margin="20,10,0,0">
-                            <CollectionView.ItemTemplate>
-                                <DataTemplate>
-                                    <StackLayout Orientation="Horizontal">
-                                        <Label Text="{Binding .}" VerticalOptions="Center"/>
-                                        <Button Text="X" Clicked="RemoveFilterButton_Clicked" CommandParameter="{Binding .}"/>
-                                    </StackLayout>
-                                </DataTemplate>
-                            </CollectionView.ItemTemplate>
-                        </CollectionView>
                     </StackLayout>
                 </Frame>
-
 
                 <!-- Titre de la section -->
                 <Label Grid.ColumnSpan="3" Grid.Row="2"

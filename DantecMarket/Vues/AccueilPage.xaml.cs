@@ -20,6 +20,7 @@ namespace DantecMarket.Vues
         public AccueilPage()
         {
             InitializeComponent();
+            LoadCategories();
 
             // Exemple d'ajout d'images
             Images.Add("categorie3.jpg");
@@ -71,11 +72,24 @@ namespace DantecMarket.Vues
             var bouton = sender as ImageButton;
             if (bouton != null)
             {
-                var categorieName = bouton.CommandParameter.ToString();
-                var lesCategories = new CategoriePage(); // Assurez-vous que votre ProductPage peut accepter une string dans son constructeur
-
-                await Navigation.PushAsync(lesCategories);
+                // Récupérer l'ID de la catégorie sélectionnée
+                var idCategorie = (int)bouton.CommandParameter;
+                // Passer cet ID à la page des détails des sous-catégories
+                var pageSousCategories = new SousCategorieDetailPage();
+                await Navigation.PushAsync(pageSousCategories);
             }
+        }
+
+        private async void LoadCategories()
+        {
+            var api = new GestionApi();
+            var categories = await api.GetAllAsync<Categorie>("api/mobile/categories");
+            Categorie.CollClasse.Clear(); // Effacez les anciennes données
+            foreach (var categorie in categories)
+            {
+                Categorie.CollClasse.Add(categorie);
+            }
+            CategoriesCollectionView.ItemsSource = Categorie.CollClasse;
         }
     }
 }
