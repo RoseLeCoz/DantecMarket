@@ -12,7 +12,7 @@ namespace DantecMarket
         public static string BaseApiAddress => "http://172.17.0.64/";
         public static User CurrentUser = null;
         public static Produit CurrentProduit = null;
+        public static CategorieParent CurrentCategorieParent = null;
         public static Categorie CurrentCategorie = null;
-        public static SousCategorie CurrentSousCategorie = null;
     }
 }

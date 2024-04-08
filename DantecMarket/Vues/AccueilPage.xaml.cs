@@ -20,7 +20,7 @@ namespace DantecMarket.Vues
         public AccueilPage()
         {
             InitializeComponent();
-            LoadCategories();
+            LoadCategoriesParent();
 
             // Exemple d'ajout d'images
             Images.Add("categorie3.jpg");
@@ -67,29 +67,30 @@ namespace DantecMarket.Vues
             _currentIndex = e.CurrentPosition;
         }
 
-        private async void OnCategorieClicked(object sender, EventArgs e)
+        private async void OnCategorieParentClicked(object sender, EventArgs e)
         {
             var bouton = sender as ImageButton;
             if (bouton != null)
             {
                 // Récupérer l'ID de la catégorie sélectionnée
                 var idCategorie = (int)bouton.CommandParameter;
-                // Passer cet ID à la page des détails des sous-catégories
-                var pageSousCategories = new SousCategorieDetailPage();
-                await Navigation.PushAsync(pageSousCategories);
+                // Assurez-vous que la logique suivante correspond à ce que vous voulez faire avec cet ID
+                var pageCategories = new CategorieDetailPage(idCategorie);
+                await Navigation.PushAsync(pageCategories);
             }
         }
 
-        private async void LoadCategories()
+
+        private async void LoadCategoriesParent()
         {
             var api = new GestionApi();
-            var categories = await api.GetAllAsync<Categorie>("api/mobile/categories");
-            Categorie.CollClasse.Clear(); // Effacez les anciennes données
-            foreach (var categorie in categories)
+            var categoriesParent = await api.GetAllAsync<CategorieParent>("api/mobile/categories");
+            CategorieParent.CollClasse.Clear(); // Effacez les anciennes données
+            foreach (var categorieParent in categoriesParent)
             {
-                Categorie.CollClasse.Add(categorie);
+                CategorieParent.CollClasse.Add(categorieParent);
             }
-            CategoriesCollectionView.ItemsSource = Categorie.CollClasse;
+            CategoriesParentCollectionView.ItemsSource = CategorieParent.CollClasse;
         }
     }
 }

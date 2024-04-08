@@ -31,11 +31,11 @@ namespace DantecMarket.Modeles
         #region Getters/Setters
         [JsonProperty("Id")]
         public int Id
-        { get => _id; set => _id = value;}
+        { get => _id; set => _id = value; }
 
         [JsonProperty("Nom")]
         public string Nom
-        { get => _nom; set => _nom = value;}
+        { get => _nom; set => _nom = value; }
         #endregion
 
         #region Methodes
@@ -44,7 +44,7 @@ namespace DantecMarket.Modeles
             try
             {
                 // Utilisez GetAllAsync pour récupérer toutes les catégories depuis l'API
-                ObservableCollection<Categorie> resultats = await _apiServices.GetAllAsync<Categorie>("api/mobile/categories");
+                ObservableCollection<Categorie> resultats = await _apiServices.GetAllAsync<Categorie>("api/mobile/getLesCategories");
 
                 if (resultats != null && resultats.Count > 0)
                 {
@@ -66,9 +66,6 @@ namespace DantecMarket.Modeles
 
             return false; // Retournez false si la récupération a échoué
         }
-
-
-
         #endregion
     }
 }

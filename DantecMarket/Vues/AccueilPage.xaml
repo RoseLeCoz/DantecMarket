@@ -65,7 +65,7 @@
 
             <!-- Section des catégories -->
             <Label Text="Parcourir les catégories" HorizontalOptions="Center" FontSize="Medium" FontAttributes="Bold"/>
-            <CollectionView x:Name="CategoriesCollectionView">
+            <CollectionView x:Name="CategoriesParentCollectionView">
                 <CollectionView.ItemsLayout>
                     <GridItemsLayout Orientation="Vertical" Span="3" />
                 </CollectionView.ItemsLayout>
@@ -73,7 +73,7 @@
                     <DataTemplate>
                         <Frame CornerRadius="20" BackgroundColor="#E3E3E3" BorderColor="Transparent">
                             <StackLayout>
-                                <ImageButton Source="epicerie_sucree.jpg" CommandParameter="Epicerie sucrée" Clicked="OnCategorieClicked" HeightRequest="110" CornerRadius="20" Aspect="AspectFill"/>
+                                <ImageButton Source="epicerie_sucree.jpg" CommandParameter="{Binding Id}" Clicked="OnCategorieParentClicked" HeightRequest="110" CornerRadius="20" Aspect="AspectFill"/>
                                 <Label Text="{Binding Nom}" HorizontalOptions="Center" HorizontalTextAlignment="Center" LineBreakMode="WordWrap" />
                             </StackLayout>
                         </Frame>
